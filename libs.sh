@@ -3,7 +3,7 @@
 # Update the system and install necessary system packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y vim python3-dev libpq-dev curl build-essential
+sudo apt install -y vim python3-dev libpq-dev curl build-essential libffi-dev
 
 # Remove existing pyenv directory if exists
 rm -rf /root/.pyenv
