@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Upgrade system and install necessary system packages
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install -y vim python3-dev libpq-dev
+# Update the system and install necessary system packages
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y vim python3-dev libpq-dev curl
 
 # Install pyenv for Python version management
 curl https://pyenv.run | bash
@@ -12,7 +12,14 @@ curl https://pyenv.run | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init --path)"\nfi' >> ~/.bashrc
+
+# Reload .bashrc to apply changes
 source ~/.bashrc
+
+# Sometimes necessary for pyenv to be recognized immediately
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # Install Python 3.10.0 with pyenv and set it as the default
 pyenv install 3.10.0
