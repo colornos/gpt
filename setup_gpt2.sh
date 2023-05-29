@@ -36,4 +36,4 @@ $PYENV_ROOT/bin/pyenv global 3.10.0
 $PYENV_ROOT/shims/python3 -m pip install --upgrade pip setuptools wheel
 
 # Install necessary Python packages
-$PYENV_ROOT/shims/python3 -m pip install numpy transformers datasets tiktoken wandb tqdm torch
+$PYENV_ROOT/shims/python3 -m pip install torch numpy transformers datasets tiktoken wandb tqdm
