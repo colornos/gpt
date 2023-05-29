@@ -10,7 +10,7 @@ fi
 # Update the system and install necessary system packages
 apt update
 apt upgrade -y
-apt install -y vim net-tools python3-dev libpq-dev curl build-essential libffi-dev libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+apt install -y vim python3-dev libpq-dev curl build-essential libffi-dev libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # Install pyenv for Python version management
 curl https://pyenv.run | bash
