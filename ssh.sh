@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Update System
-sudo apt-get update
-sudo apt-get upgrade -y
+#sudo apt-get update
+#sudo apt-get upgrade -y
 
 # Install openssh-server
 sudo apt-get install openssh-server -y
