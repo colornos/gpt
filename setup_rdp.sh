@@ -16,5 +16,9 @@ echo xfce4-session >~/.xsession
 # Restart XRDP service
 sudo service xrdp restart
 
-# Afterwards run this command to add a rule to your firewall to allow this connection
-#sudo ufw allow 3389/tcp
+# Allow xrdp through the firewall
+sudo ufw allow 3389/tcp
+
+# Display IP address
+echo "Here is your IP address for remote connection:"
+hostname -I | awk '{print $1}'
