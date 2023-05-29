@@ -4,7 +4,7 @@ set -e
 # Update the system and install necessary system packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y vim python3-dev libpq-dev curl build-essential libffi-dev libssl-dev zlib1g-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev python3-pip
+sudo apt install -y vim python3-dev libpq-dev curl build-essential libffi-dev libssl-dev zlib1g-dev libreadline-dev libsqlite3-dev wget llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev python3-pip python3-venv
 
 # Install pyenv for Python version management if it does not already exist
 if [ ! -d "$HOME/.pyenv" ] ; then
@@ -32,8 +32,14 @@ if ! pyenv versions | grep -q '3.10.0' ; then
     pyenv global 3.10.0
 fi
 
-# Update pip, setuptools, and wheel
-pip install --upgrade pip setuptools wheel --user
+# Create a Python virtual environment
+python3 -m venv gpt2_env
 
-# Install necessary Python packages
-pip install torch numpy transformers datasets tiktoken wandb tqdm --user
+# Activate the virtual environment
+source gpt2_env/bin/activate
+
+# Update pip, setuptools, and wheel in the virtual environment
+pip install --upgrade pip setuptools wheel
+
+# Install necessary Python packages into the virtual environment
+pip install torch numpy transformers datasets tiktoken wandb tqdm
