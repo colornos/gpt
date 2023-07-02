@@ -1,4 +1,5 @@
 import torch
+import yaml
 from torch import nn
 
 # Define a simple GPT model for demonstration
