@@ -1,0 +1,1 @@
+sudo python3 step_1.py --train_path 'QA-TrainingSet.txt' --model_name 'gpt2' --output_dir './fine_tuned_model_step_1' --epochs 2
