@@ -43,4 +43,4 @@ def fine_tune_gpt(dataset_path, model_name='gpt2', output_dir='./results', epoch
     model.save_pretrained(output_dir)
 
 # Use the function
-fine_tune_gpt('health_qa_dataset.txt', model_name='gpt2', output_dir='./fine_tuned_model', epochs=2)
+fine_tune_gpt('QA-TrainingSet.txt', model_name='gpt2', output_dir='./fine_tuned_model', epochs=2)
